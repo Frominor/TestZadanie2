@@ -1,0 +1,29 @@
+.RightSide {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+.UserAvatar {
+  border-radius: 50%;
+}
+.UserName {
+  color: rgb(61, 151, 192);
+  font-weight: bold;
+  padding: 10px 0px 20px 10px;
+}
+.UserInfo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  align-items: center;
+}
+
+.UserInfo > p {
+  padding: 5px;
+  color: rgb(61, 151, 192);
+}
+.UserInfo > p > span {
+  color: black;
+  display: inline-block;
+  margin-left: 10px;
+}

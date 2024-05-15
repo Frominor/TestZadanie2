@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import "./App.css";
+import React from "react";
+import { MainSide } from "./MainSide/MainSide";
+import { RightSide } from "./RightSide/UserInfo";
+import { User } from "./interfaces/IUsers";
+export const App: React.FC = () => {
+  const [Users, SetUsers] = React.useState<User[]>([]);
+  const [IsLoading, SetIsLoading] = React.useState<boolean>(true);
+  const [User, SetUser] = React.useState<User>();
+  React.useEffect(() => {
+    if (IsLoading) {
+      fetch("https://randomuser.me/api/?results=50")
+        .then((res) => {
+          return res.json();
+        })
+        .then((res) => {
+          SetUsers(res.results);
+          SetIsLoading(false);
+        });
+    }
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="Container">
+        <MainSide Users={Users} SetUser={SetUser}></MainSide>
+        <RightSide User={User}></RightSide>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

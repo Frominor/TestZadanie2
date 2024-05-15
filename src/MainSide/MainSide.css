@@ -1,0 +1,31 @@
+th {
+  text-align: left;
+  padding: 10px 0px 10px 10px;
+}
+th {
+  border-bottom: 1px solid lightgray;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.MainSide {
+  width: 60%;
+}
+.Scroll {
+  overflow-y: scroll;
+}
+tr:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+
+td {
+  text-align: left;
+  padding: 10px 0px 10px 10px;
+}
+
+tr:focus {
+  background-color: lightgray;
+  opacity: 1 !important;
+}

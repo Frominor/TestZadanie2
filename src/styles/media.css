@@ -1,0 +1,7 @@
+@media (max-width: 700px) {
+  td,
+  th,
+  p {
+    font-size: 10px;
+  }
+}
